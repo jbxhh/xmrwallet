@@ -36,15 +36,13 @@ public abstract class SecureActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-             android.content.SharedPreferences prefs = android.preference.PreferenceManager.getDefaultSharedPreferences(this);
+            android.content.SharedPreferences prefs = android.preference.PreferenceManager.getDefaultSharedPreferences(this);
         boolean isBlockEnabled = prefs.getBoolean("pref_security_screen_block", true);
         if (isBlockEnabled) {
             getWindow().setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
         }
+
    
-
-    
-
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
