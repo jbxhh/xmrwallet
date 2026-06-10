@@ -28,7 +28,12 @@
             android:defaultValue="false"
             android:key="@string/preferred_stickyfiat"
             android:summary="@string/setting_stickyfiat_summary"
-            android:title="@string/setting_stickyfiat" />
+            android:title="@string/setting_stickyfiat" /> 
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_security_screen_block"
+            android:title="禁止截屏与录屏"
+            android:summary="开启后，防止恶意软件在后台偷看或截取你的资产信息"/>   
     </PreferenceCategory>
     <PreferenceCategory app:title="@string/title_info">
         <Preference
