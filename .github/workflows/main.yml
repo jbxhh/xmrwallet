@@ -26,16 +26,14 @@ jobs:
     - name: 生成 local.properties
       run: |
         echo "sdk.dir=$ANDROID_HOME" > local.properties
-        echo "生成的配置文件内容："
-        cat local.properties
-    # ---------------------------------------
+        echo "ndk.dir=$ANDROID_NDK_HOME" >> local.properties # 如果项目用到NDK也加上这行
+      # ----------------------------------
 
     - name: 授予 Gradle 执行权限
       run: chmod +x gradlew
 
-    # --- 修改：增加 --stacktrace 方便下次排查 ---
     - name: 开始编译 Debug APK
-      run: ./gradlew assembleDebug --stacktrace
+      run: ./gradlew assembleDebug --stacktrace # 加上 --stacktrace 方便下次排查
 
     - name: 上传 APK 文件
       uses: actions/upload-artifact@v4
