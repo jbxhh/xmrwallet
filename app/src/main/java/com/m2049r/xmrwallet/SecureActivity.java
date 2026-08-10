@@ -35,14 +35,9 @@ public abstract class SecureActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 已移除防截图限制（FLAG_SECURE）
+    }
 
-            android.content.SharedPreferences prefs = android.preference.PreferenceManager.getDefaultSharedPreferences(this);
-        boolean isBlockEnabled = prefs.getBoolean("pref_security_screen_block", true);
-        if (isBlockEnabled) {
-            getWindow().setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
-        }
-
-   
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
