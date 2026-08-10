@@ -3,6 +3,7 @@ name: Build Android APK
 on:
   push:
     branches: [ master, main ]
+  workflow_dispatch: # 允许你在手机网页端手动触发
 
 jobs:
   build:
@@ -12,7 +13,7 @@ jobs:
     - name: 检出代码
       uses: actions/checkout@v4
       with:
-        submodules: recursive  # 必须加上这一行，以防漏掉 C++ 核心子模块
+        submodules: recursive
 
     - name: 配置 JDK 17
       uses: actions/setup-java@v4
@@ -20,17 +21,30 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: 安装 Android SDK 与 NDK
-      uses: android-actions/setup-android@v3
+    # 关键修正：必须使用 NDK 17，否则编译必炸
+    - name: 安装指定的 Android NDK
+      uses: nttld/setup-ndk@v1
+      with:
+        ndk-version: 17.2.4988734
+        install-ci: true
+
+    # 关键修正：手动补全 C++ 底层源码
+    - name: 克隆 Monero C++ 依赖库
+      run: |
+        mkdir -p external-libs
+        git clone https://github.com/m2049r/monero.git external-libs/monero
+        cd external-libs/monero
+        git checkout release-v0.17.1.9-monerujo || true
 
     - name: 授予 Gradle 执行权限
       run: chmod +x gradlew
 
+    # 关键修正：使用这个任务名会自动应用你在 build.gradle 里写的 .debug 后缀
     - name: 编译 Debug 版 APK
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleMainnetProdDebug
 
     - name: 上传生成的 APK 文件
       uses: actions/upload-artifact@v4
       with:
         name: app-debug-apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: app/build/outputs/apk/**/*.apk
