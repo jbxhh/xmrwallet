@@ -3,7 +3,7 @@ name: Build Android APK
 on:
   push:
     branches: [ master, main ]
-  workflow_dispatch: # 允许你在手机网页端手动触发
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,14 +21,21 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    # 关键修正：必须使用 NDK 17，否则编译必炸
-    - name: 安装指定的 Android NDK
-      uses: nttld/setup-ndk@v1
+    # 1. 扩充内存，防止编译 C++ 时 OOM 崩溃
+    - name: 增加虚拟内存 (Swap)
+      uses: pierotofy/set-swap-space@master
       with:
-        ndk-version: 17.2.4988734
-        install-ci: true
+        swap-size-gb: 4
 
-    # 关键修正：手动补全 C++ 底层源码
+    # 2. 手动下载并指定 NDK r17c，避开 404 错误
+    - name: 下载并配置 NDK r17c
+      run: |
+        wget -q https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
+        unzip -q android-ndk-r17c-linux-x86_64.zip -d $HOME/
+        echo "ndk.dir=$HOME/android-ndk-r17c" > local.properties
+        echo "sdk.dir=$ANDROID_HOME" >> local.properties
+
+    # 3. 补全底层 C++ 核心库
     - name: 克隆 Monero C++ 依赖库
       run: |
         mkdir -p external-libs
@@ -39,11 +46,11 @@ jobs:
     - name: 授予 Gradle 执行权限
       run: chmod +x gradlew
 
-    # 关键修正：使用这个任务名会自动应用你在 build.gradle 里写的 .debug 后缀
-    - name: 编译 Debug 版 APK
+    # 4. 执行编译
+    - name: 编译 APK
       run: ./gradlew assembleMainnetProdDebug
 
-    - name: 上传生成的 APK 文件
+    - name: 上传 APK 文件
       uses: actions/upload-artifact@v4
       with:
         name: app-debug-apk
