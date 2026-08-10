@@ -35,7 +35,7 @@ public abstract class SecureActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 已移除防截图限制（FLAG_SECURE）
+        // 已彻底移除防截图限制
     }
 
     @Override
