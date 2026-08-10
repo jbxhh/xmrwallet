@@ -15,40 +15,20 @@ jobs:
       with:
         submodules: recursive
 
-    - name: 配置 JDK 17
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'temurin'
-        java-version: '17'
-
     - name: 增加虚拟内存 (Swap)
       uses: pierotofy/set-swap-space@master
       with:
         swap-size-gb: 4
 
-    - name: 下载并配置 NDK r17c
-      run: |
-        wget -q https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
-        unzip -q android-ndk-r17c-linux-x86_64.zip -d $HOME/
-        echo "ndk.dir=$HOME/android-ndk-r17c" > local.properties
-        echo "sdk.dir=$ANDROID_HOME" >> local.properties
-
-    - name: 克隆 Monero C++ 依赖库
-      run: |
-        mkdir -p external-libs
-        git clone https://github.com/m2049r/monero.git external-libs/monero
-        cd external-libs/monero
-        git checkout release-v0.17.1.9-monerujo || true
-
     - name: 授予 Gradle 执行权限
       run: chmod +x gradlew
 
-    # 【关键修改在这里】改用最标准的 assembleDebug 命令
-    - name: 编译 APK
-      run: ./gradlew assembleDebug
+    # 直接使用项目自带的脚本在 Docker 中完成全部 C++ 编译和打包
+    - name: 使用 Docker 编译 APK
+      run: ./build.sh
 
     - name: 上传 APK 文件
       uses: actions/upload-artifact@v4
       with:
-        name: app-debug-apk
+        name: xmr-debug-apk
         path: app/build/outputs/apk/**/*.apk
