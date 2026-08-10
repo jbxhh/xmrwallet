@@ -52,7 +52,7 @@
     <string name="text_noretry_monero">我们遇到了困难！</string>
     <string name="text_noretry">抱歉, %1$s服务现在似乎不可用</string>
     <string name="text_send_btc_amount">%1$s %3$s = %2$s XMR</string>
-    <string name="text_send_btc_rate">(Rate: %1$s %2$s/XMR)</string>
+    <string name="text_send_btc_rate">(汇率: %1$s %2$s/XMR)</string>
     <string name="label_send_btc_xmrto_info">访问%1$s以获得更多支持</string>
     <string name="label_send_btc_xmrto_key_lb">密钥\n%1$s</string>
     <string name="label_send_btc_xmrto_key">%1$s密钥</string>
