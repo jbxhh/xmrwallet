@@ -21,38 +21,14 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: 增加虚拟内存 (Swap)
-      uses: pierotofy/set-swap-space@master
-      with:
-        swap-size-gb: 4
-
-    # 1. 显式下载并配置 NDK 17c 到标准目录
-    - name: 配置 NDK r17c
-      run: |
-        wget -q https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
-        unzip -q android-ndk-r17c-linux-x86_64.zip -d $HOME/
-        echo "ANDROID_NDK_HOME=$HOME/android-ndk-r17c" >> $GITHUB_ENV
-        echo "ndk.dir=$HOME/android-ndk-r17c" > local.properties
-
-    # 2. 强行把 Monero C++ 核心库克隆到项目要求的正确位置
-    - name: 准备 C++ 依赖
-      run: |
-        mkdir -p external-libs
-        if [ ! -d "external-libs/monero" ]; then
-          git clone https://github.com/m2049r/monero.git external-libs/monero
-        fi
-        cd external-libs/monero
-        git checkout release-v0.17.1.9-monerujo || true
-
     - name: 授予 Gradle 执行权限
       run: chmod +x gradlew
 
-    # 3. 使用标准命令开始编译（注意这里会开始跑长达 15 分钟的 C++ 交叉编译）
-    - name: 编译 APK
+    - name: 开始编译
       run: ./gradlew assembleDebug
 
     - name: 上传 APK 文件
       uses: actions/upload-artifact@v4
       with:
-        name: xmr-debug-apk
+        name: app-debug
         path: app/build/outputs/apk/debug/**/*.apk
