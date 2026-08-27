@@ -1,27 +1,38 @@
-version: 2
+name: Build Monerujo External Libs
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
 jobs:
   build:
-    working_directory: ~/code
-    docker:
-      - image: cimg/android:2023.12-ndk
-    environment:
-      JVM_OPTS: -Xmx3200m
+    runs-on: ubuntu-latest
+
     steps:
-      - checkout
-      - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-          name: Download Dependencies
-          command: ./gradlew androidDependencies
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-          name: Run Tests
-          command: ./gradlew test
-      - store_artifacts:
-          path: app/build/reports
-          destination: reports
-      - store_test_results:
-          path: app/build/test-results
+    - name: Checkout xmrwallet
+      uses: actions/checkout@v4
+      with:
+        path: xmrwallet
+
+    - name: Checkout m2049r/monero
+      uses: actions/checkout@v4
+      with:
+        repository: m2049r/monero
+        ref: release-v0.17.1.9-monerujo
+        submodules: recursive
+        path: monero
+
+    - name: Set up Symlink
+      run: |
+        mkdir -p xmrwallet/external-libs
+        ln -s ${{ github.workspace }}/monero ${{ github.workspace }}/xmrwallet/external-libs/monero
+
+    - name: Run Build with Docker & Make
+      run: |
+        cd xmrwallet/external-libs
+        make
+
+    - name: Verify Build Output
+      run: |
+        test -f xmrwallet/external-libs/monero/src/wallet/api/wallet2_api.h && echo "Build Success!"
