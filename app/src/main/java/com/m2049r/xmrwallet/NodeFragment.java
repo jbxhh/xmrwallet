@@ -544,10 +544,6 @@ public class NodeFragment extends Fragment
                 }
             });
 
-            if (Helper.preventScreenshot()) {
-                editDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
-            }
-
             etNodePass.getEditText().setOnEditorActionListener((v, actionId, event) -> {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     editDialog.getButton(DialogInterface.BUTTON_NEUTRAL).requestFocus();
