@@ -1,189 +1,253 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY nbsp "&#160;">]>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="zh">
+    <string name="app_name" translatable="false">monerujo</string>
     <string name="wallet_activity_name">钱包</string>
-    <string name="menu_about">关于我们</string>
+
+    <string name="menu_about">关于</string>
     <string name="menu_privacy">隐私政策</string>
+
     <string name="menu_share">分享</string>
     <string name="menu_help">帮助</string>
     <string name="menu_receive">收款</string>
     <string name="menu_rename">重命名</string>
+    <string name="menu_delete">删除</string>
     <string name="menu_backup">备份</string>
     <string name="menu_changepw">修改密码</string>
-    <string name="password_weak">强度不够哦 &#8230;</string>
-    <string name="password_fair">嗯emm.. &#8230;</string>
-    <string name="password_good">还可以做得更好哦!</string>
-    <string name="password_strong">不错哦~ &#8230;</string>
-    <string name="password_very_strong">超赞！</string>
-    <string name="label_login_wallets">钱包</string>
-    <string name="label_credits">感谢</string>
-    <string name="label_ok">确认</string>
+    <string name="menu_back">返回</string>
+    <string name="menu_close">关闭</string>
+    <string name="menu_cancel">取消</string>
+
+    <string name="password_weak">继续输入……</string>
+    <string name="password_fair">一般……</string>
+    <string name="password_good">再加把劲，可以更好！</string>
+    <string name="password_strong">不错了……</string>
+    <string name="password_very_strong">太棒了，几乎无法破解！</string>
+
+    <string name="label_login_wallets">钱包列表</string>
+    <string name="label_credits">致谢</string>
+    <string name="label_ok">确定</string>
     <string name="label_cancel">取消</string>
     <string name="label_close">关闭</string>
+    <string name="label_wallet_advanced_details">详细信息</string>
+
     <string name="label_send_success">发送成功</string>
     <string name="label_send_done">完成</string>
-    <string name="label_receive_info_gen_qr_code">点此获取QR码</string>
-    <string name="info_xmrto_enabled">已支持比特币支付，点此了解更多</string>
-    <string name="info_ledger_enabled">已支持Ledger硬件钱包，点此了解更多</string>
+
+    <string name="label_receive_info_gen_qr_code">点击生成二维码</string>
+
+    <string name="info_xmrto_enabled">你可以将门罗币兑换为其他币种，点击了解更多。</string>
+    <string name="info_ledger_enabled">已启用Ledger硬件钱包，点击查看详情。</string>
+
     <string name="info_xmrto"><![CDATA[
-      <b>您输入了一个%1$s地址</b><br/>
-      <i>您发送的门罗币将通过<b>%3$s</b>服务，转换为%2$s发送给对方。</i>
+        <b>你输入的是 %1$s 地址。</b><br/>
+        <i>你将发送门罗币，通过 <b>%3$s</b> 服务，该地址将收到 %2$s。</i>
     ]]></string>
-    <string name="info_send_xmrto_success_order_label">%1$s订单</string>
+
+    <string name="info_send_xmrto_success_order_label">%1$s 订单</string>
+
     <string name="info_send_xmrto_success_btc">%1$s %2$s</string>
-    <string name="info_send_xmrto_paid">等待确认中</string>
-    <string name="info_send_xmrto_unpaid">等待支付中</string>
-    <string name="info_send_xmrto_error">%1$s错误(%2$s)</string>
-    <string name="info_send_xmrto_sent">成功发送%1$s！</string>
-    <string name="info_send_xmrto_query">查询中&#8230;</string>
+
+    <string name="info_send_xmrto_paid">等待确认</string>
+    <string name="info_send_xmrto_unpaid">等待付款</string>
+    <string name="info_send_xmrto_error">%1$s 错误（%2$s）</string>
+    <string name="info_send_xmrto_sent">%1$s 已发送！</string>
+    <string name="info_send_xmrto_query">查询中……</string>
+
     <string name="info_send_xmrto_parms"><![CDATA[
-        <b>您可以发送%1$s &#8212; %2$s %4$s</b>.<br/>
-        <i><u>此刻</u><b>%5$s</b>的汇率是<b>%3$s %4$s/XMR</b> </i>.
+        <b>可发送范围：%1$s — %2$s %4$s</b>。<br/>
+        <i><b>%5$s</b> 当前汇率：<b>%3$s %4$s/门罗币</b></i>。
     ]]></string>
-    <string name="send_available_btc">余额: %1$s XMR (~%2$s %3$s)</string>
-    <string name="info_paymentid_integrated">&#x2714; 支付ID已集成</string>
-    <string name="info_prepare_tx">正在为您的交易做准备工作</string>
+
+    <string name="send_available_btc">余额：%1$s 门罗币（约 %2$s %3$s）</string>
+
+    <string name="info_paymentid_integrated">&#x2714; 已集成支付ID</string>
+    <string name="info_prepare_tx">正在准备交易</string>
+
     <string name="label_send_progress_xmrto_create">创建订单</string>
-    <string name="label_send_progress_xmrto_query">订单查询中</string>
-    <string name="label_send_progress_create_tx">Monero交易准备中</string>
-    <string name="label_send_progress_queryparms">参数查询中</string>
+    <string name="label_send_progress_xmrto_query">查询订单</string>
+    <string name="label_send_progress_create_tx">准备门罗币交易</string>
+
+    <string name="label_send_progress_queryparms">正在获取参数</string>
+
     <string name="label_generic_xmrto_error">错误</string>
-    <string name="text_generic_xmrto_error">代码: %1$d</string>
-    <string name="text_retry">再次尝试</string>
-    <string name="text_noretry_monero">我们遇到了困难！</string>
-    <string name="text_noretry">抱歉, %1$s服务现在似乎不可用</string>
-    <string name="text_send_btc_amount">%1$s %3$s = %2$s XMR</string>
-    <string name="text_send_btc_rate">(汇率: %1$s %2$s/XMR)</string>
-    <string name="label_send_btc_xmrto_info">访问%1$s以获得更多支持</string>
-    <string name="label_send_btc_xmrto_key_lb">密钥\n%1$s</string>
-    <string name="label_send_btc_xmrto_key">%1$s密钥</string>
-    <string name="label_send_btc_address">%1$s收款地址</string>
+    <string name="text_generic_xmrto_error">错误代码：%1$d</string>
+
+    <string name="text_retry">点击重试</string>
+    <string name="text_noretry_monero">当前无法继续操作！</string>
+    <string name="text_noretry">哎呀，%1$s 服务暂时不可用！</string>
+
+    <string name="text_send_btc_amount">%1$s %3$s = %2$s 门罗币</string>
+    <string name="text_send_btc_rate">（汇率：%1$s %2$s/门罗币）</string>
+
+    <string name="label_send_btc_xmrto_info">前往 %1$s 官网获取支持与查询订单</string>
+    <string name="label_send_btc_xmrto_key_lb">订单号\n%1$s</string>
+    <string name="label_send_btc_xmrto_key">%1$s 订单编号</string>
+    <string name="label_send_btc_address">目标 %1$s 地址</string>
     <string name="label_send_btc_amount">金额</string>
+
     <string name="label_send_txid">交易ID</string>
-    <string name="label_send_address">收款地址</string>
+    <string name="label_send_address">目标地址</string>
     <string name="label_send_notes">备注</string>
-    <string name="backup_progress">备份中</string>
-    <string name="archive_progress">存档中</string>
-    <string name="rename_progress">重命名中</string>
-    <string name="changepw_progress">密码修改中</string>
-    <string name="service_progress">整合中&#8230;\n这将花上不少时间</string>
+
+    <string name="backup_progress">正在备份</string><!--TODO deleteme-->
+    <string name="archive_progress">正在归档</string><!--TODO deleteme-->
+    <string name="rename_progress">正在重命名</string><!--TODO deleteme-->
+    <string name="changepw_progress">正在修改密码</string>
+
+    <string name="service_progress">正在处理……\n这可能需要一点时间！</string>
+
     <string name="backup_success">备份成功</string>
     <string name="backup_failed">备份失败！</string>
+    <string name="delete_failed">删除失败！</string>
     <string name="rename_failed">重命名失败！</string>
-    <string name="changepw_failed">密码修改失败！</string>
+    <string name="changepw_failed">修改密码失败！</string>
     <string name="changepw_success">密码已修改</string>
-    <string name="label_daemon">节点</string>
-    <string name="status_wallet_loading">钱包加载中 &#8230;</string>
+
+    <string name="label_daemon">网络</string>
+    <string name="connect_stagenet" translatable="false">Stagenet</string>
+    <string name="connect_testnet" translatable="false">Testnet</string>
+    <string name="status_wallet_loading">正在加载钱包……</string>
     <string name="status_wallet_unloaded">钱包已保存</string>
     <string name="status_wallet_unload_failed">钱包保存失败！</string>
-    <string name="status_wallet_connecting">连接中&#8230;</string>
-    <string name="status_wallet_connect_failed">节点连接失败\n请检查您的账户/密码</string>
-    <string name="status_wallet_connect_wrongversion">节点版本不兼容-请更新！</string>
-    <string name="status_wallet_node_invalid">无效节点！\n请尝试其它的节点</string>
-    <string name="status_wallet_connect_ioex">无法连接至节点\n请重新尝试或连接其它的节点</string>
+    <string name="status_wallet_connecting">正在连接……</string>
+    <string name="status_wallet_connect_failed">节点连接失败！\n请检查用户名和密码</string>
+    <string name="status_wallet_connect_wrongversion">节点版本不兼容，请升级！</string>
+    <string name="status_wallet_node_invalid">无效节点！\n尝试更换其他节点。</string>
+    <string name="status_wallet_connect_ioex">无法访问节点！\n重试或更换节点。</string>
+
     <string name="status_wallet_disconnected">已断开连接</string>
-    <string name="status_transaction_failed">交易失败: %1$s</string>
-    <string name="send_xmrto_timeout">您等待太长时间了！</string>
-    <string name="service_busy">仍然处理您之前的钱包中 &#8230;</string>
-    <string name="prompt_rename">重命名%1$s</string>
-    <string name="prompt_changepw">新密码%1$s</string>
-    <string name="prompt_changepwB">重复新密码%1$s</string>
-    <string name="prompt_password">密码%1$s</string>
-    <string name="prompt_fingerprint_auth">您也可以选择指纹登录。\n请触摸传感器。</string>
-    <string name="prompt_open_wallet">钱包打开中&#8230;</string>
-    <string name="bad_fingerprint">无法识别您的指纹，请重试。</string>
+
+    <string name="status_transaction_failed">交易失败：%1$s</string>
+
+    <string name="send_xmrto_timeout">等待超时！</string>
+
+    <string name="service_busy">正在处理上一次钱包操作……</string>
+
+    <string name="prompt_rename">重命名 %1$s</string>
+
+    <string name="prompt_changepw">为 %1$s 设置新密码</string>
+    <string name="prompt_changepwB">再次输入 %1$s 的密码</string>
+    <string name="prompt_password">%1$s 的密码</string>
+    <string name="prompt_fingerprint_auth">你也可以使用指纹解锁钱包。\n请触碰指纹传感器。</string>
+    <string name="prompt_open_wallet">正在打开钱包……</string>
+    <string name="bad_fingerprint">指纹识别失败，请重试。</string>
     <string name="bad_password">密码错误！</string>
     <string name="bad_saved_password">保存的密码无效。\n请手动输入密码。</string>
     <string name="bad_wallet">钱包不存在！</string>
-    <string name="prompt_daemon_missing">需要设置节点！</string>
-    <string name="prompt_wrong_net">钱包与所选网络不匹配。</string>
-    <string name="label_watchonly">(只读)</string>
+    <string name="prompt_daemon_missing">必须配置节点！</string>
+    <string name="prompt_wrong_net">钱包与所选网络不匹配</string><!--TODO deleteme-->
+
+    <string name="label_watchonly">（仅观察）</string>
+
     <string name="label_wallet_receive">收款</string>
-    <string name="label_wallet_send">发送</string>
-    <string name="xmr_unconfirmed_amount">+ %1$s %2$s未确认</string>
-    <string name="service_description">monerujo服务</string>
+    <string name="label_wallet_send">转账</string>
+
+    <string name="xmr_unconfirmed_amount">+ %1$s %2$s 未确认</string>
+
+    <string name="service_description">钱包已打开</string>
+
     <string name="status_synced">已同步：</string>
-    <string name="status_remaining">区块剩余</string>
-    <string name="status_syncing">扫描中：</string>
-    <string name="message_camera_not_permitted">不开通的相机权限的话便无法扫描QR码！</string>
-    <string name="label_copy_viewkey">查阅密钥</string>
+    <string name="status_remaining">剩余区块</string>
+    <string name="status_syncing">同步中：</string>
+
+    <string name="message_camera_not_permitted">没有相机权限，无法扫描二维码！</string>
+
+    <string name="label_copy_viewkey">查看密钥</string>
     <string name="label_copy_address">公开地址</string>
     <string name="label_copy_xmrtokey">密钥</string>
-    <string name="message_copy_viewkey">查阅密钥已复制到剪贴板！</string>
+    <string name="message_copy_viewkey">查看密钥已复制到剪贴板！</string>
     <string name="message_copy_xmrtokey">密钥已复制到剪贴板！</string>
     <string name="message_copy_address">钱包地址已复制到剪贴板！</string>
     <string name="message_copy_txid">交易ID已复制到剪贴板！</string>
-    <string name="message_nocopy">因安全原因，复制功能已被禁用！</string>
-    <string name="message_exchange_failed">无法获取汇率！\n使用XMR/XMR或重新尝试</string>
-    <string name="generate_title">创建新钱包</string>
-    <string name="generate_name_hint">钱包名</string>
+    <string name="message_nocopy">出于安全考虑，已禁用复制！</string>
+
+    <string name="message_exchange_failed">获取汇率失败！\n使用门罗币对门罗币或稍后重试</string>
+
+    <string name="generate_title">创建钱包</string>
+    <string name="generate_name_hint">钱包名称</string>
     <string name="generate_password_hint">钱包密码</string>
-    <string name="generate_fingerprint_hint">开通指纹登录钱包</string>
+    <string name="generate_fingerprint_hint">允许使用指纹打开钱包</string>
     <string name="generate_fingerprint_warn"><![CDATA[
-<strong>指纹授权</strong>
-<p>启用指纹授权后，无需输入密码，也可查看钱包余额和收款。</p>
-<p>出于安全性的考量，若要查看钱包明细和汇款，monerujo还是会要求您输入密码。</p>
-<strong>安全警告</strong>
-<p>最后monerujo提醒您，任何取得您指纹的人，都能够进入您的账户。</p>
-<p>比如，他人可能趁您熟睡时，使用您的指纹登录您的账户。</p>
-<strong>您确定要开启此功能？</strong>
-]]></string>
-    <string name="generate_bad_passwordB">密码不匹配</string>
-    <string name="generate_empty_passwordB">密码请不要为空</string>
+        <strong>指纹认证</strong>
+        <p>开启指纹后，无需输入密码即可查看钱包余额与收款。</p>
+        <p>但为安全起见，查看钱包详情或转账时，仍需要输入密码。</p>
+        <strong>安全警告</strong>
+        <p>请注意：任何拥有你指纹的人都可以查看你的钱包余额。</p>
+        <p>例如，他人可趁你熟睡时通过指纹访问你的钱包。</p>
+        <strong>确定要启用该功能吗？</strong>
+    ]]></string>
+    <string name="generate_bad_passwordB">两次输入的密码不一致</string>
+    <string name="generate_empty_passwordB">密码不能为空</string>
     <string name="generate_buttonGenerate">创建钱包！</string>
-    <string name="generate_button_accept">我已经抄写下了助记种子密语</string>
-    <string name="generate_wallet_name">请命名</string>
-    <string name="generate_wallet_exists">钱包已存在！</string>
-    <string name="generate_wallet_dot">无法启动</string>
-    <string name="generate_wallet_creating">钱包创建中</string>
+    <string name="generate_button_accept">我已备份助记词</string>
+
+    <string name="generate_wallet_name">请输入钱包名称！</string>
+    <string name="generate_wallet_exists">该钱包已存在！</string>
+    <string name="generate_wallet_dot">名称不能以 . 开头</string>
+    <string name="generate_wallet_creating">正在创建钱包</string>
     <string name="generate_wallet_created">钱包已创建</string>
-    <string name="generate_restoreheight_error">输入区块链高度或日期 (YYYY-MM-DD)</string>
+
+    <string name="generate_restoreheight_error">请输入区块高度或日期（年‑月‑日）</string>
+
     <string name="generate_wallet_type_key">密钥</string>
-    <string name="generate_wallet_type_new">新</string>
-    <string name="generate_wallet_type_seed">种子密语</string>
-    <string name="generate_wallet_type_view">查阅</string>
+    <string name="generate_wallet_type_new">新建</string>
+    <string name="generate_wallet_type_seed">助记词</string>
+    <string name="generate_wallet_type_view">观察钱包</string>
+    <string name="generate_wallet_type_ledger" translatable="false">Ledger</string>
+    <string name="generate_wallet_type_sidekick" translatable="false">Sidekick</string>
+
     <string name="generate_address_hint">公开地址</string>
-    <string name="generate_viewkey_hint">查阅密钥</string>
-    <string name="generate_spendkey_hint">支付密钥</string>
-    <string name="generate_mnemonic_hint">25词助记种子密语</string>
-    <string name="generate_restoreheight_hint">恢复区块高度或日期 (YYYY-MM-DD)</string>
+    <string name="generate_viewkey_hint">查看密钥</string>
+    <string name="generate_spendkey_hint">花费密钥</string>
+    <string name="generate_mnemonic_hint">25个单词助记词</string>
+    <string name="generate_restoreheight_hint">恢复高度或日期（年‑月‑日）</string>
+
     <string name="generate_address_label">公开地址</string>
-    <string name="generate_viewkey_label">查阅密钥</string>
-    <string name="generate_spendkey_label">支付密钥</string>
-    <string name="generate_mnemonic_label">助记种子密语</string>
+    <string name="generate_viewkey_label">查看密钥</string>
+    <string name="generate_spendkey_label">花费密钥</string>
+    <string name="generate_mnemonic_label">助记词</string>
     <string name="generate_crazypass_label">钱包文件恢复密码</string>
-    <string name="generate_check_key">输入有效密钥</string>
-    <string name="generate_check_address">输入有效地址</string>
-    <string name="generate_check_mnemonic">请输入您的25词助记种子密语</string>
-    <string name="send_notes_hint">私密备注 (选填)</string>
+
+    <string name="generate_check_key">请输入有效的密钥</string>
+    <string name="generate_check_address">请输入有效的地址</string>
+    <string name="generate_check_mnemonic">请输入25位助记词</string>
+
+    <string name="send_notes_hint">私有备注（选填）</string>
     <string name="send_generate_paymentid_hint">生成</string>
+    <string name="send_qr_hint">扫描</string>
     <string name="send_send_label">发送门罗币</string>
-    <string name="send_send_timed_label">发送门罗币 (%1$s)</string>
-    <string name="send_qr_invalid">非QR码</string>
-    <string name="send_qr_address_invalid">该支付QR码无效</string>
-    <string name="send_address_invalid">该地址无效</string>
-    <string name="send_address_not_openalias">OpenAlias地址无效</string>
-    <string name="send_address_openalias">OpenAlias安全&#x2714;</string>
-    <string name="send_address_resolve_openalias">解析OpenAlias&#8230;</string>
-    <string name="send_address_no_dnssec">OpenAlias无DNSSEC - 这可能是个假地址</string>
-    <string name="send_title">发送</string>
-    <string name="send_available">余额: %1$s XMR</string>
+    <string name="send_send_timed_label">发送门罗币（%1$s）</string>
+    <string name="send_qr_invalid">不是有效二维码</string>
+    <string name="send_qr_address_invalid">不是有效的付款二维码</string>
+    <string name="send_address_invalid">地址无效</string>
+    <string name="send_address_not_openalias">OpenAlias地址不可用</string>
+    <string name="send_address_openalias">OpenAlias已安全验证 &#x2714;</string>
+    <string name="send_address_resolve_openalias">解析OpenAlias中……</string>
+    <string name="send_address_no_dnssec">OpenAlias无DNSSEC保护，地址可能被伪造</string>
+    <string name="send_title">转账</string>
+    <string name="send_available">余额：%1$s 门罗币</string>
     <string name="send_address_title">地址</string>
     <string name="send_amount_title">金额</string>
     <string name="send_confirm_title">确认</string>
     <string name="send_success_title">完成</string>
+
     <string name="send_amount_label">金额</string>
-    <string name="send_fee_btc_label">手续费 (XMR)</string>
+    <string name="send_fee_btc_label">手续费（门罗币）</string>
     <string name="send_fee_label">手续费</string>
-    <string name="send_total_btc_label">合计 (XMR)</string>
+    <string name="send_total_btc_label">合计（门罗币）</string>
     <string name="send_total_label">合计</string>
-    <string name="send_amount">%1$s XMR</string>
+
+    <string name="send_amount" translatable="false">%1$s XMR</string>
     <string name="send_fee">+%1$s 手续费</string>
-    <string name="send_create_tx_error_title">创建交易发生错误</string>
+
+    <string name="send_create_tx_error_title">创建交易出错</string>
+
     <string name="tx_list_fee">手续费 %1$s</string>
-    <string name="tx_list_amount_failed">(%1$s)</string>
+    <string name="tx_list_amount_failed" translatable="false">（%1$s）</string>
     <string name="tx_list_failed_text">失败</string>
-    <string name="tx_list_amount_negative">- %1$s</string>
-    <string name="tx_list_amount_positive">+ %1$s</string>
+    <string name="tx_list_amount_negative" translatable="false">- %1$s</string>
+    <string name="tx_list_amount_positive" translatable="false">+ %1$s</string>
+
     <string name="tx_timestamp">时间戳</string>
     <string name="tx_id">交易ID</string>
     <string name="tx_key">交易密钥</string>
@@ -192,80 +256,260 @@
     <string name="tx_blockheight">区块</string>
     <string name="tx_amount">金额</string>
     <string name="tx_fee">手续费</string>
-    <string name="tx_transfers">转账</string>
+    <string name="tx_transfers">转账记录</string>
     <string name="tx_notes">备注</string>
-    <string name="tx_notes_hint">(选填)</string>
-    <string name="tx_title">交易明细</string>
-    <string name="tx_pending">待处理中</string>
+    <string name="tx_notes_hint">（选填）</string>
+    <string name="tx_title">交易详情</string>
+
+    <string name="tx_pending">待确认</string>
     <string name="tx_failed">失败</string>
+
     <string name="receive_amount_hint">金额</string>
-    <string name="receive_desc_hint">描述 (选填)</string>
+    <string name="receive_desc_hint">描述（选填）</string>
     <string name="receive_cannot_open">无法打开钱包！</string>
-    <string name="receive_amount_too_big">上限 %1$s</string>
-    <string name="receive_amount_negative">下限 0</string>
-    <string name="receive_amount_nan">请输入数字</string>
-    <string name="details_alert_message">接下来将显示敏感数据。\n请确认周边环境是否安全。</string>
-    <string name="details_alert_yes">安全</string>
-    <string name="details_alert_no">返回上一步</string>
+
+    <string name="receive_amount_too_big">最大值：%1$s</string>
+    <string name="receive_amount_negative">最小值：0</string>
+    <string name="receive_amount_nan">请输入有效门罗币金额</string>
+    <string name="copy_receive_address">复制收款地址</string>
+    <string name="paste_give_address">粘贴转账地址</string>
+
+    <string name="details_alert_message">即将展示敏感数据。\n注意周围环境，谨防他人偷看！</string>
+    <string name="details_alert_yes">环境安全</string>
+    <string name="details_alert_no">返回！</string>
     <string name="details_title">详情</string>
-    <string name="delete_alert_yes">好的，开始吧！</string>
-    <string name="delete_alert_no">不用了，谢谢！</string>
-    <string name="fab_create_new">创建新钱包</string>
-    <string name="fab_restore_viewonly">恢复只读钱包</string>
+
+    <string name="delete_alert_message">该钱包将被删除。如未备份助记词或有效备份，资产将永久丢失。</string>
+    <string name="delete_alert_yes">确认删除！</string>
+    <string name="delete_alert_no">取消！</string>
+
+    <string name="fab_create_new">新建钱包</string>
+    <string name="fab_restore_viewonly">恢复观察钱包</string>
     <string name="fab_restore_key">通过私钥恢复钱包</string>
-    <string name="fab_restore_seed">通过25词助记种子密语恢复钱包</string>
+    <string name="fab_restore_seed">通过25位助记词恢复钱包</string>
+
+    <string name="accounts_balance" translatable="false">%1$s XMR</string>
+    <string name="tx_account_formatted" translatable="false">(%1$d, %2$d) &nbsp;&lt;span style=\"background-color: #%3$s; color: #%4$s;\"&gt;&nbsp;%5$s&nbsp;&lt;/span&gt;</string>
+
     <string name="accounts_drawer_new">创建账户</string>
-    <string name="accounts_new">添加新账户 #%1$d</string>
+    <string name="accounts_new">已新建账户 #%1$d</string>
     <string name="tx_account">账户 #</string>
-    <string name="send_sweepall">发送这个账户中所有已确认的资金！</string>
+
+    <string name="send_sweepall">转出该账户全部已确认余额！</string>
     <string name="tx_subaddress">子地址</string>
-    <string name="generate_address_label_sub">公开子地址#%1$d: %2$s</string>
+    <string name="generate_address_label_sub">公开子地址 #%1$d：%2$s</string>
+
     <string name="menu_language">语言</string>
-    <string name="language_system_default">使用系统默认语言</string>
-    <string name="fab_restore_ledger">通过Ledger Nano 恢复</string>
-    <string name="progress_ledger_progress">与Ledger通信中</string>
+    <string name="language_system_default">跟随系统语言</string>
+
+    <string name="fab_restore_ledger">从Ledger Nano恢复</string>
+
+    <string name="progress_ledger_progress">与Ledger通讯中</string>
     <string name="progress_ledger_confirm">请在Ledger设备上确认！</string>
-    <string name="progress_ledger_lookahead">子地址检索中</string>
-    <string name="progress_ledger_verify">密钥验证中</string>
-    <string name="progress_ledger_opentx">处理数学中</string>
-    <string name="progress_ledger_mlsag">哈希中</string>
-    <string name="open_wallet_ledger_missing">请（重新）连接Ledger设备</string>
-    <string name="accounts_progress_new">账户创建中</string>
+    <string name="progress_ledger_lookahead">正在获取子地址</string>
+    <string name="progress_ledger_verify">校验密钥</string>
+    <string name="progress_ledger_opentx">交易运算中</string>
+    <string name="progress_ledger_mlsag">哈希计算中</string>
+    <string name="open_wallet_ledger_missing">请重新连接Ledger设备</string>
+
+    <string name="accounts_progress_new">正在创建账户</string>
+
     <string name="toast_ledger_attached">%1$s 已连接</string>
-    <string name="toast_ledger_detached">%1$s 已断开连接</string>
-    <string name="menu_info">显示私密信息</string>
-    <string name="menu_streetmode">公共场合模式</string>
-    <string name="info_nodes_enabled">Node-o-matiC已可用，点此了解更多.</string>
-    <string name="node_height">同步的最新区块: %1$s</string>
+    <string name="toast_ledger_detached">%1$s 已断开</string>
+
+    <string name="unknown_amount" translatable="false">？？？</string>
+
+    <string name="menu_info">显示密钥信息！</string>
+    <string name="menu_streetmode">街头模式</string>
+
+    <string name="node_wrong_net" translatable="false">节点仅扫描主网！</string>
+
+    <string name="info_nodes_enabled">已开启自动节点，点击查看详情。</string>
+    <string name="node_height">最新区块更新时间：%1$s</string>
     <string name="label_nodes">节点</string>
-    <string name="node_name_hint">节点名 (选填)</string>
-    <string name="node_address_hint">主机名</string>
+    <string name="node_name_hint">节点名称（选填）</string>
+    <string name="node_address_hint">主机地址或IP</string>
     <string name="node_port_hint">端口</string>
-    <string name="node_user_hint">账户名 (选填)</string>
-    <string name="node_pass_hint">密码 (选填)</string>
+    <string name="node_user_hint">用户名（选填）</string>
+    <string name="node_pass_hint">密码（选填）</string>
     <string name="node_host_unresolved">无法解析主机</string>
-    <string name="node_host_empty">我们需要该信息！</string>
-    <string name="node_port_numeric">必须为数字</string>
-    <string name="node_port_range">必须为1&#8211;65535</string>
+    <string name="node_host_empty">此项不能为空！</string>
+    <string name="node_port_numeric">端口必须为数字</string>
+    <string name="node_port_range">端口范围 1‑65535</string>
     <string name="node_fab_add">添加节点</string>
-    <string name="node_refresh_hint">点此刷新！</string>
-    <string name="node_test_error">连接发生错误 %1$d</string>
-    <string name="node_general_error">连接发生错误</string>
-    <string name="node_auth_error">授权失败</string>
+    <string name="node_refresh_hint">点击刷新！</string>
+    <string name="node_test_error">连接错误 %1$d</string>
+    <string name="node_general_error">连接错误</string>
+    <string name="node_auth_error">身份验证失败</string>
     <string name="node_result_label">测试结果：</string>
-    <string name="node_result">高度: %1$s (v%2$d), Ping: %3$.0fms, IP: %4$s</string>
-    <string name="node_testing">测试IP: %1$s &#8230;</string>
-    <string name="node_refresh_wait">请等待扫描工作完成</string>
-    <string name="node_create_hint">点此选择/添加节点</string>
-    <string name="node_pull_hint">手动添加节点或下拉开始扫描</string>
-    <string name="node_scanning">网络扫描中&#8230;</string>
-    <string name="node_nobookmark">已自动将最佳%1$d节点加入书签</string>
+    <string name="node_result">区块高度：%1$s（版本v%2$d），延迟：%3$.0f毫秒，IP：%4$s</string>
+    <string name="node_testing">正在测试IP：%1$s ……</string>
+    <string name="node_refresh_wait">请等待扫描完成</string>
+    <string name="node_create_hint">点击选择或添加节点</string>
+    <string name="node_pull_hint">手动添加节点或下拉扫描网络</string>
+    <string name="node_scanning">正在扫描网络……</string>
+    <string name="node_nobookmark">已自动收藏最优 %1$d 个节点</string>
+    <string name="node_use_ssl">使用SSL加密</string>
     <string name="label_test">测试</string><!--note: as in "Test a network connection"-->
-    <string name="send_address_hint">收款人</string>
-    <string name="street_sweep_amount">全部资产！</string>
-    <string name="menu_ledger_seed">转换Ledger种子密语</string>
-    <string name="prompt_ledger_seed">Ledger种子密语</string>
-    <string name="prompt_ledger_phrase">Ledger密码(高级模式)</string>
-    <string name="bad_ledger_seed">无效的Ledger种子密语！</string>
-    <string name="prompt_ledger_seed_warn">在此输入您的Ledger种子密语将会产生风险！</string>
+
+    <string name="send_address_hint">接收方</string>
+
+    <string name="street_sweep_amount">全部余额！</string>
+
+    <string name="menu_ledger_seed">转换Ledger助记词</string>
+    <string name="prompt_ledger_seed">Ledger助记词</string>
+    <string name="prompt_ledger_phrase">Ledger密码（高级）</string>
+    <string name="bad_ledger_seed">无效Ledger助记词！</string>
+    <string name="prompt_ledger_seed_warn">在此输入Ledger助记词存在极大安全风险！</string>
+
+    <string name="label_account" translatable="false">%1$s（%2$s）</string>
+
+    <string name="label_restoreheight">恢复区块高度</string>
+
+    <string name="toast_ledger_start_app">请在 %1$s 设备打开门罗币应用</string>
+
+    <string name="menu_rescan">重新扫描！</string>
+
+    <string name="onboarding_agree">我已了解！</string>
+    <string name="onboarding_button_next">下一步</string>
+    <string name="onboarding_button_ready">准备好了！</string>
+
+    <string name="onboarding_welcome_title">欢迎使用Monerujo！</string>
+    <string name="onboarding_welcome_information">本应用可创建和管理门罗币钱包，存储你的门罗币资产。</string>
+    <string name="onboarding_seed_title">妥善保管助记词</string>
+    <string name="onboarding_seed_information">拥有助记词即可完全控制钱包资产。一旦丢失，我们无法帮你恢复，资产将会永久损失。</string>
+    <string name="onboarding_xmrto_title">加密货币兑换转账</string>
+    <string name="onboarding_xmrto_information">Monerujo内置兑换功能，你可以使用门罗币兑换其他多种加密货币。</string>
+    <string name="onboarding_nodes_title">自定义节点</string>
+    <string name="onboarding_nodes_information">节点将钱包连接到门罗币网络。你可以选择公共节点，也可以使用自己搭建的私有节点。</string>
+    <string name="onboarding_fpsend_title">指纹转账</string>
+    <string name="onboarding_fpsend_information">开启后，你可直接使用指纹发送门罗币。如需每次转账都输入密码，请关闭指纹权限。</string>
+
+    <string name="menu_daynight">深色模式</string>
+    <string-array name="daynight_themes">
+        <item>自动</item>
+        <item>浅色</item>
+        <item>深色</item>
+    </string-array>
+    <string name="gunther_says">这里空空如也\n请创建或恢复钱包</string>
+
+    <string name="menu_default_nodes">恢复默认节点</string>
+    <string name="toast_default_nodes">正在恢复默认节点……</string>
+
+    <string name="node_updated_now">最近区块：%1$d 秒前</string>
+    <string name="node_updated_mins">最近区块：%1$d 分钟前</string>
+    <string name="node_updated_hours">最近区块：%1$d 小时前</string>
+    <string name="node_updated_days">最近区块：%1$d 天前</string>
+
+    <string name="shift_noquote">获取报价失败</string>
+    <string name="shift_checkamount">检查金额后重试</string>
+
+    <string name="info_xmrto_ambiguous"><![CDATA[
+        <b>地址类型不明确。</b><br/>
+        <i>请在上方选择地址类型。</i>
+    ]]></string>
+
+    <string name="info_xmrto_help"><![CDATA[
+        <b>请输入或扫描 %1$s 地址。</b><br/>
+        <i>你将发送门罗币，接收方通过 <b>%3$s</b> 服务收到 %2$s。</i>
+    ]]></string>
+
+    <string name="info_xmrto_help_xmr"><![CDATA[
+        <b>请输入或扫描门罗币地址。</b>
+    ]]></string>
+
+    <string name="tx_item_transition_name" translatable="false">tx_transition_%1$s</string>
+    <string name="tx_details_transition_name" translatable="false">tx_transition</string>
+    <string name="subaddress_item_transition_name" translatable="false">subaddress_transition_%1$d</string>
+    <string name="subaddress_info_transition_name" translatable="false">subaddress_transition</string>
+    <string name="subaddress_txinfo_transition_name" translatable="false">subaddress_txinfo_transition</string>
+
+    <string name="tx_details_notes" translatable="false">&lt;span style=\"background-color: #%1$s; color: #%2$s;\"&gt;&nbsp;%3$s&nbsp;&lt;/span&gt;%4$s</string>
+    <string name="receive_subaddress" translatable="false">&lt;span style=\"background-color: #%1$s; color: #%2$s;\"&gt;&nbsp;%3$s&nbsp;&lt;/span&gt;&nbsp;&nbsp;%4$s</string>
+    <string name="subbaddress_info_subtitle" translatable="false">#%1$d：%2$s</string>
+
+    <string name="subbaddress_title">子地址</string>
+    <string name="subbaddress_name_hint">子地址名称</string>
+    <string name="max_subaddress_warning">未使用地址过多，请使用部分地址后再新建！</string>
+    <string name="max_account_warning">未使用账户过多，请使用部分账户后再新建！</string>
+    <string name="subaddress_tx_label">该子地址交易记录：</string>
+    <string name="subaddress_notx_label">该子地址暂无交易</string>
+    <string name="subaddress_select_label">选择子地址</string>
+    <string name="subaddress_details_hint">长按查看详情</string>
+    <string name="subaddress_add">添加子地址</string>
+
+    <string name="menu_restore">导入钱包</string>
+    <string name="restore_failed">导入失败！</string>
+
+    <string name="menu_deletecache">重置钱包！</string>
+    <string name="deletecache_alert_message">该钱包将被重置，所有链下数据（备注、账户、子地址名称、私有交易密钥等全部丢失！）。仅在钱包损坏无法加载时使用！</string>
+
+    <string name="status" translatable="false">&lt;span style=\"background-color: #%1$s; color: #%2$s;\"&gt;%3$s&lt;/span&gt;%4$s</string>
+
+    <string name="node_tor_error">需要Tor网络</string>
+    <string name="node_waiting">\u00A0等待节点\u00A0</string>
+    <string name="tor_enable_background">请在Orbot设置开启「允许后台启动」以使用Tor！</string>
+    <string name="tor_noshift">%1$s 不支持Tor。\n关闭Tor才可兑换门罗币。</string>
+    <string name="tor_enable">启用Tor</string>
+
+    <string name="label_seed_offset_encrypt">助记词偏移加密（实验性功能）</string>
+    <string name="seed_offset_hint">助记词偏移短语（选填）</string>
+
+    <string name="preferred_theme" translatable="false">preferred_theme</string>
+    <string name="preferred_nightmode" translatable="false">preferred_nightmode</string>
+    <string name="preferred_locale" translatable="false">preferred_locale</string>
+    <string name="preferred_lock" translatable="false">preferred_lock</string>
+    <string name="preferred_stickyfiat" translatable="false">preferred_stickyfiat</string>
+    <string name="about_info" translatable="false">about_info</string>
+    <string name="privacy_info" translatable="false">privacy_info</string>
+    <string name="credits_info" translatable="false">credits_info</string>
+
+    <string name="menu_settings">设置</string>
+    <string name="title_iface">界面</string>
+    <string name="title_info">信息</string>
+    <string name="setting_daynight">浅色 / 深色</string>
+
+    <string name="setting_theme">样式</string>
+    <string-array name="themes">
+        <item>经典</item>
+        <item>Baldaŭ</item> <!-- do not translate this one -->
+    </string-array>
+
+    <string name="message_qr_failed">生成分享二维码失败！</string>
+
+    <string name="tx_locked">交易金额锁定至区块 %1$d（还需 %2$d 个区块，约 %3$,.2f 天）</string>
+
+    <string name="label_streetmode">街头模式已开启\n仅展示新交易</string>
+
+    <string name="pocketchange_title" translatable="false">找零池</string>
+    <string name="pocketchange_amount" translatable="false">%1$3.1f XMR</string>
+    <string name="pocketchange_tx_detail">找零池 +%1$s</string>
+
+    <string name="pocketchange_info">为减少重复花费等待时间，Monerujo可以生成备用找零，代价是手续费更高。应用会尽量维持至少6笔该金额的备用找零。</string>
+    <string name="pocketchange_create_title">生成找零</string>
+
+    <string name="label_apply">应用</string>
+
+    <string name="setting_lock">后台锁定钱包</string>
+
+    <string name="label_bluetooth" translatable="false">蓝牙</string>
+    <string name="menu_bluetooth">连接Sidekick</string>
+    <string name="bluetooth_select_label">选择Sidekick设备</string>
+
+    <string name="bluetooth_permissions">需要蓝牙权限才能连接Sidekick硬件钱包！</string>
+    <string name="bluetooth_permissions_ok">确定</string>
+    <string name="bluetooth_permissions_settings">应用设置</string>
+    <string name="bluetooth_permissions_cancel">取消</string>
+
+    <string name="sidekick_pin">PIN码：%1$s</string>
+    <string name="sidekick_not_connected">［未连接］</string>
+    <string name="sidekick_confirm_tx">确认交易</string>
+    <string name="sidekick_network_warning">设备已接入网络，存在安全风险。建议开启飞行模式，仅打开蓝牙后重启应用！</string>
+    <string name="open_wallet_sidekick_missing">请连接Sidekick设备</string>
+    <string name="fab_restore_sidekick">从Sidekick恢复钱包</string>
+    <string name="sidekick_connected">Sidekick已连接</string>
+
+    <string name="setting_stickyfiat">记忆法币</string>
+    <string name="setting_stickyfiat_summary">记住上一次使用的法币币种</string>
+    <string name="preferred_stickyfiat_pref" translatable="false">preferred_stickyfiat_pref</string>
 </resources>
