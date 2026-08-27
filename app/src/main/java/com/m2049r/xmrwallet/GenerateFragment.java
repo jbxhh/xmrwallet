@@ -624,10 +624,6 @@ public class GenerateFragment extends Fragment {
             });
         });
 
-        if (Helper.preventScreenshot()) {
-            ledgerDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
-        }
-
         ledgerDialog.show();
     }
 }
