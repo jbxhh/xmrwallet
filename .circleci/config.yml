@@ -1,4 +1,4 @@
-name: Build Monerujo External Libs
+name: Build Monerujo APK
 
 on:
   push:
@@ -10,29 +10,51 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout xmrwallet
+    # 1. 拉取当前 Android 主仓库
+    - name: Checkout Android Repository
       uses: actions/checkout@v4
-      with:
-        path: xmrwallet
 
-    - name: Checkout m2049r/monero
+    # 2. 独立拉取 m2049r/monero C++ 源码仓库
+    - name: Checkout Monero Core Repository
       uses: actions/checkout@v4
       with:
         repository: m2049r/monero
-        ref: release-v0.17.1.9-monerujo
+        ref: release-v0.17.1.9-monerujo  # 对应项目需要的 Monero 分支
         submodules: recursive
-        path: monero
+        path: monero-core
 
-    - name: Set up Symlink
+    # 3. 创建目录软链接 (Linux 格式)
+    - name: Setup Symlinks
       run: |
-        mkdir -p xmrwallet/external-libs
-        ln -s ${{ github.workspace }}/monero ${{ github.workspace }}/xmrwallet/external-libs/monero
+        mkdir -p external-libs
+        ln -s ${{ github.workspace }}/monero-core ${{ github.workspace }}/external-libs/monero
 
-    - name: Run Build with Docker & Make
+    # 4. 关键步骤：先运行 Docker / Make 编译 C++ 静态库 (.so)
+    - name: Build Native C++ External Libs
       run: |
-        cd xmrwallet/external-libs
+        cd external-libs
         make
 
-    - name: Verify Build Output
+    # 5. 配置 JDK 17 环境 (Gradle 构建要求)
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    # 6. 配置 Gradle 缓存 (加快后续构建速度)
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+
+    # 7. 赋予 gradlew 执行权限并开始编译 APK
+    - name: Build APK with Gradle
       run: |
-        test -f xmrwallet/external-libs/monero/src/wallet/api/wallet2_api.h && echo "Build Success!"
+        chmod +x gradlew
+        ./gradlew assembleDebug --stacktrace
+
+    # 8. 导出生成的 APK 文件供下载
+    - name: Upload APK Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: monerujo-debug-apk
+        path: app/build/outputs/apk/debug/*.apk
