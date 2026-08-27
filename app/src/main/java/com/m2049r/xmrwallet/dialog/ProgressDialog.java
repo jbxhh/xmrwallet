@@ -78,10 +78,6 @@ public class ProgressDialog extends AlertDialog {
         }
 
         super.onCreate(savedInstanceState);
-
-        if (Helper.preventScreenshot()) {
-            Objects.requireNonNull(getWindow()).setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
-        }
     }
 
     public void setProgress(int value, int max) {
